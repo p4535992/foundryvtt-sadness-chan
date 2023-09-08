@@ -2,27 +2,85 @@
   "id": "sadness-chan",
   "title": "Sadness Chan",
   "description": "A chat 'bot' for FoundryVTT that's full of 'happy' and 'motivational' messages, to pick you up when your rolls let you down.",
-  "version": "1.1.9",
+  "version": "1.2.0",
+  "library": "false",
   "authors": [
     {
-      "name": "bmarian"
+        "name": "bmarian",
+        "url": "https://github.com/bmarian"
     },
     {
-      "name": "HadaIonut"
+        "name": "HadaIonut",
+        "url": "https://github.com/ClipplerBlood"
+    },
+    {
+      "name": "p4535992",
+      "url": "https://github.com/p4535992",
+      "discord": "",
+      "twitter": "",
+      "patreon": "",
+      "github": "p4535992",
+      "ko-fi": "",
+      "reddit": "",
+      "email": ""
     }
   ],
-  "esmodules": [
-    "sadness-chan.js"
+  "type": "module",
+  "socket": true,
+  "includes": [
+    "./assets/**",
+    "./lang/**",
+    "./languages/**",
+    "./scripts/**",
+    "./styles/**",
+    "./templates/**",
+    "./module.json",
+    "./README.md",
+    "./icons/**",
+    "./packs/**"
   ],
-  "styles": [
-    "sadness-chan.css"
+  "media": [
+    {
+      "type": "icon",
+      "location": ""
+    },
+    {
+      "type": "cover",
+      "location": ""
+    },
+    {
+      "type": "screenshot",
+      "location": ""
+    }
   ],
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "languages/en.json"
+    }
+  ],
+  "packs": [],
+  "systems": [],
+  "scripts": [],
+  "esmodules": ["module.js"],
+  "styles": ["styles/sadness-chan.css"],
   "compatibility": {
-    "minimum": 10,
-    "verified": 10
+    "minimum": 11,
+    "verified": 11,
+    "maximum": 11
   },
-  "url": "https://github.com/clipplerblood/sadness-chan",
-  "manifest": "https://raw.githubusercontent.com/clipplerblood/sadness-chan/master/src/module.json",
-  "download": "https://github.com/clipplerblood/sadness-chan/releases/download/1.1.9/sadness-chan-v1.1.9.zip",
-  "changelog": "https://github.com/bmarian/sadness-chan/releases"
+  "manifestPlusVersion": "1.2.1",
+  "url": "https://github.com/p4535992/foundryvtt-sadness-chan",
+  "manifest": "https://github.com/p4535992/foundryvtt-sadness-chan/releases/download/1.2.0/module.json",
+  "download": "https://github.com/p4535992/foundryvtt-sadness-chan/releases/download/1.2.0/module.zip",
+  "readme": "https://github.com/p4535992/foundryvtt-sadness-chan/blob/master/README.md",
+  "changelog": "https://github.com/p4535992/foundryvtt-sadness-chan/blob/master/CHANGELOG.md",
+  "bugs": "https://github.com/p4535992/foundryvtt-sadness-chan/issues",
+  "allowBugReporter": true,
+  "relationships": {
+    "systems": [],
+    "requires": [],
+    "conflicts": []
+  }
 }
