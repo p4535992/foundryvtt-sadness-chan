@@ -27,14 +27,15 @@
     margin-left: auto;
     margin-right: auto;
     flex-wrap: nowrap;
-    
+
     .bar {
       background: #955c8b;
       position: relative;
       border-bottom: 1px solid black;
       flex-grow: 1;
-      
-      .sc-bar-value, .sc-bar-index {
+
+      .sc-bar-value,
+      .sc-bar-index {
         text-align: center;
         white-space: nowrap;
         font-size: 10px;
@@ -47,14 +48,12 @@
         position: absolute;
         bottom: -20px;
       }
-      
     }
-    
+
     .bar[data-value="0"] .sc-bar-value {
       visibility: hidden;
     }
   }
-  
 }
 
 .#{$module-name}-chat-stats {
