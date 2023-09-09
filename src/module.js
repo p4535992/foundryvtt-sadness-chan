@@ -1,6 +1,6 @@
-import CreateChatMessage from "./module/hooks/CreateChatMessage";
-import ChatMessageHook from "./module/hooks/ChatMessageHook";
-import Init from "./module/hooks/Init";
+import CreateChatMessage from "./scripts/hooks/CreateChatMessage";
+import ChatMessageHook from "./scripts/hooks/ChatMessageHook";
+import Init from "./scripts/hooks/Init";
 
 Hooks.once("init", Init.initHook.bind(Init));
 
