@@ -1,13 +1,14 @@
-import Utils from "../Utils.js";
 import settings from "../Settings.js";
 import settingDefaults from "../lists/settingsDefaults.js";
+import CONSTANTS from "../constants.js";
+import Logger from "../lib/Logger.js";
 
 export default class ImportExport extends FormApplication {
   static get defaultOptions() {
     return {
       ...super.defaultOptions,
       title: "Import/Export rolls",
-      template: `modules/${Utils.moduleName}/templates/import-export.html`,
+      template: `modules/${CONSTANTS.MODULE_ID}/templates/import-export.html`,
       submitOnChange: false,
       submitOnClose: false,
       closeOnSubmit: false,
@@ -31,10 +32,10 @@ export default class ImportExport extends FormApplication {
     try {
       const parsed = JSON.parse(value);
       await settings.setCounter(parsed);
-      ui.notifications.info("Successfully imported roll history");
+      Logger.info("Successfully imported roll history", true);
     } catch (e) {
-      ui.notifications.error("Invalid JSON");
-      console.error(e);
+      Logger.error("Invalid JSON", true);
+      Logger.error(e);
     }
     this.close();
   }
@@ -42,6 +43,6 @@ export default class ImportExport extends FormApplication {
   async _onCopy(ev) {
     const value = this.element.find(`textarea[name="counter"]`).val();
     await navigator.clipboard.writeText(value);
-    ui.notifications.info("History copied to clipboard");
+    Logger.info("History copied to clipboard", true);
   }
 }

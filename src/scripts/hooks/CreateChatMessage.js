@@ -1,6 +1,6 @@
-import Utils from "../Utils.js";
 import Settings from "../Settings.js";
 import SadnessChan from "../SadnessChan.js";
+import Logger from "../lib/Logger.js";
 
 class CreateChatMessage {
   static _instance;
@@ -46,10 +46,14 @@ class CreateChatMessage {
    * @param length - the length of the array
    */
   _getZeroArray(length) {
-    const zeroArray = new Array() < number > length;
-    for (let i = 0; i < length; i++) zeroArray[i] = 0;
-
+    /*
+    const zeroArray = new Array();
+    for (let i = 0; i < length; i++) {
+      zeroArray[i] = 0;
+    }
     return zeroArray;
+    */
+    return Array(length).fill(0);
   }
 
   /**
@@ -121,7 +125,7 @@ class CreateChatMessage {
     });
     await this._updateDiceRolls(recentRolls, this._prepareUserDataForStorage(user));
 
-    Utils.debug("Analytics extracted from simple roll.");
+    Logger.debug("Analytics extracted from simple roll.");
     return recentRolls;
   }
 
@@ -145,7 +149,7 @@ class CreateChatMessage {
     });
     await this._updateDiceRolls(recentRolls, this._prepareUserDataForStorage(user));
 
-    Utils.debug("Analytics extracted from betterrolls5e.");
+    Logger.debug("Analytics extracted from betterrolls5e.");
     return recentRolls;
   }
 
@@ -223,7 +227,7 @@ class CreateChatMessage {
       term.results.forEach((element) => (recentRolls[element.result] += 1));
     });
 
-    Utils.debug("Analytics extracted from embedded rolls.");
+    Logger.debug("Analytics extracted from embedded rolls.");
     return recentRolls;
   }
 }

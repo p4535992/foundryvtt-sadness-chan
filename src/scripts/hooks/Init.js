@@ -1,5 +1,4 @@
 import Settings from "../Settings.js";
-import Utils from "../Utils.js";
 
 class Init {
   static _instance;
@@ -13,7 +12,7 @@ class Init {
 
   async initHook() {
     Settings.registerSettings();
-    Utils.debug("Prepared to collect your tears.");
+    Logger.debug("Prepared to collect your tears.");
   }
 }
 

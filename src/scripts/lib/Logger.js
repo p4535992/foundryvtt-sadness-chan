@@ -120,4 +120,14 @@ export default class Logger {
         <br><br>${message}
     </p>`;
   }
+
+  // _consoleLog(output) {
+  //   console.log(`%c${CONSTANTS.MODULE_ID} %c|`, "background: #222; color: #bada55", "color: #fff", output);
+  // }
+
+  // _consoleTrace(output) {
+  //   console.groupCollapsed(`%c${CONSTANTS.MODULE_ID} %c|`, "background: #222; color: #bada55", "color: #fff", output);
+  //   console.trace();
+  //   console.groupEnd();
+  // }
 }

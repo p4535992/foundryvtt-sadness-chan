@@ -1,12 +1,12 @@
-import Utils from "../Utils.js";
 import Settings from "../Settings.js";
+import CONSTANTS from "../constants.js";
 
 export default class ListsEditor extends FormApplication {
   static get defaultOptions() {
     return {
       ...super.defaultOptions,
       title: "Lists editor",
-      template: `modules/${Utils.moduleName}/templates/comments-editor.html`,
+      template: `modules/${CONSTANTS.MODULE_ID}/templates/comments-editor.html`,
       submitOnChange: false,
       submitOnClose: true,
       closeOnSubmit: true,
@@ -16,7 +16,7 @@ export default class ListsEditor extends FormApplication {
   getData(options = {}) {
     return {
       options: this.options,
-      moduleName: Utils.moduleName,
+      moduleName: CONSTANTS.MODULE_ID,
       lists: this._prepareListsForDisplay(),
     };
   }

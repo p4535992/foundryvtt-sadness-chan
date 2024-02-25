@@ -1,7 +1,9 @@
-import Utils from "./Utils";
 import Settings from "./Settings";
 import settingDefaults from "./lists/settingsDefaults";
 import settings from "./Settings";
+import Logger from "./lib/Logger";
+import CONSTANTS from "./constants";
+import Utils from "./Utils";
 
 class SadnessChan {
   static _instance;
@@ -31,7 +33,7 @@ class SadnessChan {
     return `
             <img
                 src="${portrait}"
-                alt="${Utils.moduleName}-portrait"
+                alt="${CONSTANTS.MODULE_ID}-portrait"
                 class="${cssClass}__portrait ${noBorder}"
             />
         `;
@@ -44,7 +46,7 @@ class SadnessChan {
    * @param isSuccess - if this message is for a crit success or fail
    */
   _sadnessMessage(content, isSuccess = true) {
-    const chatMessageClass = `${Utils.moduleName}-chat-message`;
+    const chatMessageClass = `${CONSTANTS.MODULE_ID}-chat-message`;
     const chatHeaderClass = `${chatMessageClass}-header`;
     const chatBodyClass = `${chatMessageClass}-body`;
 
@@ -131,7 +133,7 @@ class SadnessChan {
             `;
     }
     plot += `</div>`;
-    console.log(max, normalizedPerc);
+    Logger.log(`_getStatsHistogram`, max, normalizedPerc);
     return plot;
   }
 
@@ -219,7 +221,7 @@ class SadnessChan {
     return messageOutput;
   }
 
-  selectCrtFailComments(user) {
+  _selectCrtFailComments(user) {
     const { fail } = Settings.getLists();
     const message = Utils.getRandomItemFromList(fail);
     return this._updateDynamicMessages(message, user);
@@ -302,7 +304,7 @@ class SadnessChan {
    * @param displayPortrait -
    */
   getStatsMessage(userData, displayPortrait = true) {
-    const statsClass = `${Utils.moduleName}-chat-stats`;
+    const statsClass = `${CONSTANTS.MODULE_ID}-chat-stats`;
     const statsHeaderClass = `${statsClass}-header`;
     const statsBodyClass = `${statsClass}-body`;
 
@@ -338,11 +340,13 @@ class SadnessChan {
     const successNumber = this._getCrtValue(true);
     const failNumber = this._getCrtValue(false);
 
-    if (!this._shouldIWhisper(rolls, dieType, successNumber, failNumber)) return;
+    if (!this._shouldIWhisper(rolls, dieType, successNumber, failNumber)) {
+      return;
+    }
     const isSuccess = rolls[failNumber] > rolls[successNumber];
     const content = isSuccess ? this._selectCrtFailComments(user) : this._selectCrtSuccessComments(user);
 
-    Utils.debug(`Whisper sent to ${user.name}`);
+    Logger.debug(`Whisper sent to ${user.name}`);
     return this._createWhisperMessage(user._id, content, isSuccess);
   }
 

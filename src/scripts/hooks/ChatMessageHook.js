@@ -2,6 +2,7 @@ import Settings from "../Settings.js";
 import SadnessChan from "../SadnessChan.js";
 import Utils from "../Utils.js";
 import settingsDefaults from "../lists/settingsDefaults.js";
+import Logger from "../lib/Logger.js";
 
 class ChatMessageHook {
   static _instance;
@@ -76,7 +77,7 @@ class ChatMessageHook {
 
     if (counter && counter[user]) {
       this._sendStatsMessage(message, options, counter[user], user);
-      Utils.debug("Sad stats displayed.");
+      Logger.debug("Sad stats displayed.");
     } else {
       message.content = SadnessChan.generateMessageStructure(this._errorMessages.NO_DATA);
       this._prepareMessage(message, options, user, true);

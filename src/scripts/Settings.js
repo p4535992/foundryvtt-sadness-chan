@@ -1,8 +1,9 @@
-import utils from "./Utils.js";
 import ListsEditor from "./apps/ListsEditor.js";
 import listDefaults from "./lists/listDefaults.js";
 import settingDefaults from "./lists/settingsDefaults.js";
 import ImportExport from "./apps/ImportExport.js";
+import Logger from "./lib/Logger.js";
+import CONSTANTS from "./constants.js";
 
 class Settings {
   static _instance;
@@ -15,11 +16,11 @@ class Settings {
   }
 
   _registerSetting(key, data) {
-    game.settings.register(utils.moduleName, key, data);
+    game.settings.register(CONSTANTS.MODULE_ID, key, data);
   }
 
   _registerMenus() {
-    game.settings.registerMenu(utils.moduleName, settingDefaults.SETTING_KEYS.LISTS_EDITOR, {
+    game.settings.registerMenu(CONSTANTS.MODULE_ID, settingDefaults.SETTING_KEYS.LISTS_EDITOR, {
       name: "Lists editor:",
       label: "Open list editor",
       icon: "fas fa-edit",
@@ -27,7 +28,7 @@ class Settings {
       restricted: true,
     });
 
-    game.settings.registerMenu(utils.moduleName, settingDefaults.SETTING_KEYS.IMPORT_EXPORT, {
+    game.settings.registerMenu(CONSTANTS.MODULE_ID, settingDefaults.SETTING_KEYS.IMPORT_EXPORT, {
       name: "Import/Export rolls history:",
       label: "Open history editor",
       icon: "fa-solid fa-database",
@@ -53,11 +54,11 @@ class Settings {
   }
 
   _getSetting(key) {
-    return game.settings.get(utils.moduleName, key);
+    return game.settings.get(CONSTANTS.MODULE_ID, key);
   }
 
   _setSetting(key, data) {
-    return game.settings.set(utils.moduleName, key, JSON.stringify(data));
+    return game.settings.set(CONSTANTS.MODULE_ID, key, JSON.stringify(data));
   }
 
   resetLists() {
@@ -88,7 +89,7 @@ class Settings {
       this._registerSetting(setting.key, setting.data);
     });
 
-    utils.debug("Settings registered", false);
+    Logger.debug("Settings registered");
   }
 
   getSetting(key) {
@@ -96,7 +97,7 @@ class Settings {
   }
 
   setSetting(key, data) {
-    return game.settings.set(utils.moduleName, key, data);
+    return game.settings.set(CONSTANTS.MODULE_ID, key, data);
   }
 
   setCounter(counterData) {

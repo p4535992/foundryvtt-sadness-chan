@@ -1,5 +1,3 @@
-import Utils from "../Utils.js";
-
 export default {
   SETTING_DEFAULTS: {
     FAIL_CHANCE: 0.5,
@@ -12,7 +10,7 @@ export default {
     COMMENT_MESSAGE_VISIBILITY: false,
     AVERAGE_TOGGLE: false,
     IMAGE_BORDER: true,
-    SADNESS_TITLE: Utils.moduleTitle,
+    SADNESS_TITLE: "Sadness Chan",
   },
   SETTING_KEYS: {
     FAIL_CHANCE: "failComChance",
@@ -130,7 +128,7 @@ export default {
         name: "My name",
         hint: "Call me whatever. I don't care anymore.",
         type: String,
-        default: Utils.moduleTitle,
+        default: "Sadness Chan",
         scope: "world",
         config: true,
         restricted: true,
