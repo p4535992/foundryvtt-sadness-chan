@@ -27,7 +27,6 @@ export default class ImportExport extends FormApplication {
   }
 
   async _onImport(ev) {
-    // @ts-ignore
     const value = this.element.find(`textarea[name="counter"]`).val();
     try {
       const parsed = JSON.parse(value);
@@ -41,7 +40,6 @@ export default class ImportExport extends FormApplication {
   }
 
   async _onCopy(ev) {
-    // @ts-ignore
     const value = this.element.find(`textarea[name="counter"]`).val();
     await navigator.clipboard.writeText(value);
     ui.notifications.info("History copied to clipboard");

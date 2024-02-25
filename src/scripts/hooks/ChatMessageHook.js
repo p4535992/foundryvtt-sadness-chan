@@ -95,7 +95,6 @@ class ChatMessageHook {
       message.content = "";
       const activeUsers = game.users.filter((u) => u.active);
       activeUsers.forEach((user, index) => {
-        // @ts-ignore
         const userData = counter[user._id];
         if (!userData) return;
 

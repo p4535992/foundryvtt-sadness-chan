@@ -19,7 +19,6 @@ class Settings {
   }
 
   _registerMenus() {
-    // @ts-ignore
     game.settings.registerMenu(utils.moduleName, settingDefaults.SETTING_KEYS.LISTS_EDITOR, {
       name: "Lists editor:",
       label: "Open list editor",
