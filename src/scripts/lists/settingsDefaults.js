@@ -11,6 +11,7 @@ export default {
     AVERAGE_TOGGLE: false,
     IMAGE_BORDER: true,
     SADNESS_TITLE: "Sadness Chan",
+    DEBUG: false,
   },
   SETTING_KEYS: {
     FAIL_CHANCE: "failComChance",
@@ -29,6 +30,7 @@ export default {
     SADNESS_TITLE: "sadnessTitle",
     RESET_LEVEL: "resetLevel",
     IMPORT_EXPORT: "importExport",
+    DEBUG: "debug",
   },
   ERROR_MESSAGES: {
     NOT_ENOUGH_PERMISSIONS: "Sorry but this command is only for the big guy.",
@@ -210,6 +212,18 @@ export default {
         scope: "world",
         config: true,
         restricted: true,
+      },
+    },
+    {
+      key: "debug",
+      data: {
+        name: "Enable debugging",
+        hint: "Prints debug messages to the console",
+        type: Boolean,
+        default: false,
+        scope: "client",
+        config: true,
+        restricted: false,
       },
     },
   ],

@@ -1,4 +1,5 @@
 import Settings from "../Settings.js";
+import Logger from "../lib/Logger.js";
 
 class Init {
   static _instance;

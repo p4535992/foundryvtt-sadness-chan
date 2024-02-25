@@ -2,7 +2,7 @@
   "id": "sadness-chan",
   "title": "Sadness Chan",
   "description": "A chat 'bot' for FoundryVTT that's full of 'happy' and 'motivational' messages, to pick you up when your rolls let you down.",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "library": "false",
   "authors": [
     {
@@ -72,8 +72,8 @@
   },
   "manifestPlusVersion": "1.2.1",
   "url": "https://github.com/p4535992/foundryvtt-sadness-chan",
-  "manifest": "https://github.com/p4535992/foundryvtt-sadness-chan/releases/download/1.2.0/module.json",
-  "download": "https://github.com/p4535992/foundryvtt-sadness-chan/releases/download/1.2.0/module.zip",
+  "manifest": "https://github.com/p4535992/foundryvtt-sadness-chan/releases/download/1.2.1/module.json",
+  "download": "https://github.com/p4535992/foundryvtt-sadness-chan/releases/download/1.2.1/module.zip",
   "readme": "https://github.com/p4535992/foundryvtt-sadness-chan/blob/master/README.md",
   "changelog": "https://github.com/p4535992/foundryvtt-sadness-chan/blob/master/CHANGELOG.md",
   "bugs": "https://github.com/p4535992/foundryvtt-sadness-chan/issues",
