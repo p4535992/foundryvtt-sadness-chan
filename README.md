@@ -1,5 +1,7 @@
 # Sadness Chan
 
+# A successor for this module is here [Critic Message](https://foundryvtt.com/packages/critic-message)
+
 ![Latest Release Download Count](https://img.shields.io/github/downloads/p4535992/foundryvtt-sadness-chan/latest/module.zip?color=2b82fc&label=DOWNLOADS&style=for-the-badge)
 
 [![Forge Installs](https://img.shields.io/badge/dynamic/json?label=Forge%20Installs&query=package.installs&suffix=%25&url=https%3A%2F%2Fforge-vtt.com%2Fapi%2Fbazaar%2Fpackage%2Fsadness-chan&colorB=006400&style=for-the-badge)](https://forge-vtt.com/bazaar#package=sadness-chan)
@@ -15,7 +17,6 @@
 [![Translation status](https://weblate.foundryvtt-hub.com/widgets/sadness-chan/-/287x66-black.png)](https://weblate.foundryvtt-hub.com/engage/sadness-chan/)
 
 ### If you want to buy me a coffee [![alt-text](https://img.shields.io/badge/-Patreon-%23ff424d?style=for-the-badge)](https://www.patreon.com/p4535992)
-
 
 A chat 'bot' for FoundryVTT that's full of 'happy' and 'motivational' messages, to pick you up when your rolls let you down.
 
